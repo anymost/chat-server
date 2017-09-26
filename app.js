@@ -5,14 +5,18 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
+const kors = require('koa-cors')
 
 const index = require('./routes/index')
 const users = require('./routes/users')
+const api = require('./routes/api')
+const login = require('./routes/login')
 
 // error handler
 onerror(app)
 
 // middlewares
+app.use(kors())
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text']
 }))
@@ -35,6 +39,8 @@ app.use(async (ctx, next) => {
 // routes
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
+app.use(api.routes(), api.allowedMethods())
+app.use(login.routes(), login.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {
