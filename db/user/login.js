@@ -17,7 +17,6 @@ async function login (userInfo, callback){
             });
             return;
         }
-
         const {id, password, avatar} = data[0].dataValues;
         if (password === userInfo.password) {
             callback({
