@@ -1,0 +1,127 @@
+{
+    title: tableSearch
+    tags: []
+    url: {
+        value: /table/search
+        schema: ""
+        sampleUrl: ""
+    }
+    comment: ""
+    speedLimit: 0
+    response: {
+        body: {
+            type: json
+            value:
+                '''
+                {
+                    "code": 0,
+                    "message": "数据更新成功",
+                    "data": {
+                        "item": [
+                            {
+                                "tableId": "xxx",
+                                "tableName": "xxx",
+                                "securityLevel": "0:表示低 1:表示中 2:表示高",
+                                "qualityLevel": "0:表示低 1:表示中 2:表示高",
+                                "metaTablePk": "hive::dw::dw::dim_deal",
+                                "description": "项目deal表",
+                                "metaUrl": "http://meta.sankuai.com/detail/hive::dw::dw::dim_deal",
+                                "tagRootList": [
+                                    {
+                                        "tagRootId": 0,
+                                        "tagRootName": "root",
+                                        "tagList": [
+                                            {
+                                                "tagName": "name",
+                                                "tagId": 0
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "tableId": "xxx",
+                                "tableName": "xxx",
+                                "securityLevel": "0:表示低 1:表示中 2:表示高",
+                                "qualityLevel": "0:表示低 1:表示中 2:表示高",
+                                "metaTablePk": "hive::dw::dw::dim_deal",
+                                "description": "项目deal表",
+                                "metaUrl": "http://meta.sankuai.com/detail/hive::dw::dw::dim_deal",
+                                "tagRootList": [
+                                    {
+                                        "tagRootId": 0,
+                                        "tagRootName": "root",
+                                        "tagList": [
+                                            {
+                                                "tagName": "name",
+                                                "tagId": 0
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "tn": 999,
+                        "cn": 1,
+                        "pn": 10,
+                        "sn": 100
+                    },
+                    "id": "http://json-schema.org/schema#"
+                }
+                '''
+            schema:
+                '''
+                 {
+                    "code": 0,
+                    "message": "数据更新成功",
+                    "data": {
+                       "item": [
+                           {
+                               "tableId": "xxx",
+                               "tableName": "xxx",
+                               "securityLevel": "0:表示低 1:表示中 2:表示高",
+                               "qualityLevel": "0:表示低 1:表示中 2:表示高",
+                               "metaTablePk": "hive::dw::dw::dim_deal",
+                               "description": "项目deal表",
+                               "metaUrl": "http://meta.sankuai.com/detail/hive::dw::dw::dim_deal",
+                               "tagRootList": [{
+                                     "tagRootId": 0,
+                                     "tagRootName": "root",
+                                     "tagList": [{"tagName": "name", "tagId": 0}]
+                                   }]
+                           },
+                           {
+                               "tableId":"xxx",
+                               "tableName":"xxx",
+                               "securityLevel":"0:表示低 1:表示中 2:表示高",
+                               "qualityLevel":"0:表示低 1:表示中 2:表示高",
+                               "metaTablePk":"hive::dw::dw::dim_deal",
+                               "description":"项目deal表",
+                               "metaUrl":"http://meta.sankuai.com/detail/hive::dw::dw::dim_deal",
+                               "tagRootList":[{
+                                     "tagRootId": 0,
+                                     "tagRootName": "root",
+                                     "tagList": [{"tagName": "name", "tagId": 0}]
+                                   }]
+                           }],
+                       "tn": 999, 
+                       "cn": 1, 
+                       "pn": 10, 
+                       "sn": 100 
+                      }
+                   }
+                '''
+            comment: ""
+            deepEqual: false
+        }
+        headers: {}
+        statusCode: 200
+    }
+    request: {
+        headers: {}
+        body: {}
+        method: POST
+    }
+    cases: []
+    version: 0.0.3
+}

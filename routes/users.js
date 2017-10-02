@@ -3,10 +3,14 @@ const router = require('koa-router')()
 router.prefix('/users')
 
 router.get('/', function (ctx, next) {
+  ctx.cookies.set('index', 'cookie', {
+    httpOnly: false
+  });
   ctx.body = 'this is a users response!'
 })
 
 router.get('/bar', function (ctx, next) {
+  ctx.cookies.set('bar', 'cookie');
   ctx.body = 'this is a users/bar response'
 })
 

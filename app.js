@@ -19,7 +19,10 @@ onerror(app)
 app.use(bodyparser({enableTypes:['json', 'form', 'text']}))
 
 
-app.use(kors())
+app.use(kors({
+    'Access-Control-Allow-Origin': 'http://localhost:3000',
+    'Access-Control-Allow-Credentials': true
+}))
 app.use(json())
 app.use(logger())
 app.use(require('koa-static')(__dirname + '/public'))
