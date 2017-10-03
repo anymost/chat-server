@@ -1,0 +1,1 @@
+exports.HOST = '//localhost:4000';

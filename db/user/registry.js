@@ -1,4 +1,5 @@
 const model = require('../model');
+const {HOST} = require('../../config');
 const {idCreator} = require('../../tools');
 const {User} = model;
 
@@ -17,7 +18,7 @@ async function registry(userInfo){
             return Promise.resolve({
                 code: 200,
                 message: '用户创建成功',
-                data: {id}
+                data: {id, name: userInfo.userName, avatar: userInfo.avatar}
             });
         } else {
             return Promise.resolve({

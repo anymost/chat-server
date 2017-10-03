@@ -24,3 +24,8 @@ exports.idCreator = () => {
     let id = new Date().valueOf();
     return parseInt(id);
 };
+
+exports.avatarPathHandle = path => {
+    let reg = /.+(\/avatar\/.+$)/;
+    return (reg.exec(path)||[])[1];
+};

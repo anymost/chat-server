@@ -1,6 +1,6 @@
-
 const model = require('../model');
 const {User} = model;
+const {HOST} = require('../../config');
 
 async function login (userInfo){
     try {
@@ -24,7 +24,7 @@ async function login (userInfo){
                 data: {
                     id: id,
                     name: userInfo.userName,
-                    avatar: avatar
+                    avatar:  avatar
                 }
             });
         } else {
