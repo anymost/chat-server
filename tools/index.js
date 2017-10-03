@@ -19,3 +19,8 @@ exports.randomName = () => {
     }
     return path.join(__dirname, '../images/avatar/', `${name}.jpg`);
 };
+
+exports.idCreator = () => {
+    let id = new Date().valueOf();
+    return parseInt(id);
+};

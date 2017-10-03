@@ -11,6 +11,7 @@ const index = require('./routes/index')
 const users = require('./routes/users')
 const login = require('./routes/login')
 const upload = require('./routes/upload')
+const registry = require('./routes/registry')
 
 // error handler
 onerror(app)
@@ -46,6 +47,7 @@ app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 app.use(login.routes(), login.allowedMethods())
 app.use(upload.routes(), upload.allowedMethods())
+app.use(registry.routes(), registry.allowedMethods())
 
 
 app.on('error', (err, ctx) => {

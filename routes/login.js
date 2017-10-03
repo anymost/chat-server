@@ -6,9 +6,8 @@ router.prefix('/api');
 router.post('/login', async (ctx) => {
     const {userName: userName = '', password: password = ''} = ctx.request.body;
     if (userName && password) {
-        await login({userName, password}, (value) => {
-            ctx.body = value;
-        });
+        const value = await login({userName, password});
+        ctx.body = value;
     } else {
         ctx.body = {
             code: 400,
