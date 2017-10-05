@@ -1,16 +1,21 @@
 const router = require('koa-router')();
+const chatList = require('../db/chat/chatList');
 
 router.prefix('/api');
 
 router.get('/chatList/:id', async (ctx) => {
-    const {id} = ctx.request.body;
+    const url = ctx.request.url;
+    const reg = /\/api\/chatList\/(\d+)/;
+    const id = (reg.exec(url)||[])[1];
     if (id) {
-        ctx.body = {};
+        const value = await chatList(id);
+        console.log(value);
+        ctx.body = value;
     } else {
         ctx.body = {
-            code: 400,
-            message: '信息填写不完整'
-        };
+                 code: 400,
+                 message: '用户信息不存在'
+            };
     }
 
 });

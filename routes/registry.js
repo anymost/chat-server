@@ -1,6 +1,5 @@
 const router = require('koa-router')();
 const registry = require('../db/user').registry;
-const {avatarPathHandle} = require('../tools');
 
 router.prefix('/api');
 

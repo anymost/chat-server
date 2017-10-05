@@ -25,6 +25,38 @@ const User = Pool.define('users', {
     }
 });
 
+
+const Chat = Pool.define('chat', {
+    id: {
+        type: Sequelize.DOUBLE,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    receiver: {
+        type: Sequelize.DOUBLE,
+        references: {
+            model: User,
+            key: 'id',
+
+        }
+    },
+    sender: {
+        type: Sequelize.DOUBLE,
+        references: {
+            model: User,
+            key: 'id',
+        }
+    },
+    date: {
+       type: Sequelize.DATE
+    },
+    message: {
+        type: Sequelize.STRING
+    }
+});
+
 /*User.sync({force: false});*/
+/* Chat.sync({force: false});*/
 
 exports.User = User;
+exports.Chat = Chat;
