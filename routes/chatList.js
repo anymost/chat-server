@@ -9,7 +9,6 @@ router.get('/chatList/:id', async (ctx) => {
     const id = (reg.exec(url)||[])[1];
     if (id) {
         const value = await chatList(id);
-        console.log(value);
         ctx.body = value;
     } else {
         ctx.body = {

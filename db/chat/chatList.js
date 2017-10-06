@@ -49,8 +49,26 @@ async function chatList (id = 0){
                 sender: item,
                 name: message[item].name,
                 avatar: message[item].avatar,
-                data: message[item].data
+                data: message[item].data,
+                sendData: []
             })
+        }
+        for(let i = 0; i < result.length; i++) {
+            let item = result[i];
+            let receiver = item.sender;
+            const value = await Chat.findAll({
+                attributes: ['date', 'message'],
+                where: {
+                    sender: id,
+                    receiver
+                }
+            });
+            for (let chat of value) {
+                result[i].sendData.push({
+                    message: chat.dataValues.message,
+                    date: chat.dataValues.date
+                });
+            }
         }
 
         return Promise.resolve({

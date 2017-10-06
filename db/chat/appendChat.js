@@ -18,6 +18,7 @@ async function appendChat(info) {
             message: '发送成功'
         });
     } catch (error) {
+        console.log(error);
         return Promise.resolve({
             code: 401,
             message: error.name || '存储失败'
@@ -25,5 +26,6 @@ async function appendChat(info) {
     }
 
 }
+
 
 module.exports = appendChat;

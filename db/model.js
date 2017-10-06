@@ -55,8 +55,8 @@ const Chat = Pool.define('chat', {
     }
 });
 
-/*User.sync({force: false});*/
-/* Chat.sync({force: false});*/
+// User.sync({force: false});
+//  Chat.sync({force: false});
 
 exports.User = User;
 exports.Chat = Chat;
