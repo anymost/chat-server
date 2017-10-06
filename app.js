@@ -13,6 +13,7 @@ const login = require('./routes/login')
 const upload = require('./routes/upload')
 const registry = require('./routes/registry')
 const chatList = require('./routes/chatList')
+const sendMessage = require('./routes/sendMessage')
 
 // error handler
 onerror(app)
@@ -50,6 +51,7 @@ app.use(login.routes(), login.allowedMethods())
 app.use(upload.routes(), upload.allowedMethods())
 app.use(registry.routes(), registry.allowedMethods())
 app.use(chatList.routes(), chatList.allowedMethods())
+app.use(sendMessage.routes(), sendMessage.allowedMethods())
 
 
 app.on('error', (err, ctx) => {

@@ -1,10 +1,10 @@
 const Chat = require('../model').Chat;
-const idCreator = require('../../tools').idCreator();
+const idCreator = require('../../tools').idCreator;
 
 async function appendChat(info) {
     try {
         const {sender, receiver, message} = info;
-        const id = idCreator;
+        const id = idCreator();
         const date = new Date();
         await Chat.create({
             id,
