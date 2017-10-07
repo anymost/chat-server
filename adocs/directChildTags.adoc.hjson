@@ -6,6 +6,7 @@
         schema: ""
         sampleUrl: ""
     }
+    comment: ""
     speedLimit: 0
     response: {
         body: {
@@ -40,6 +41,66 @@
                                 "ownerId": 44032,
                                 "isRoot": 0,
                                 "isLeaf": 1,
+                                "tableNum": 31
+                            },
+                            {
+                                "id": 25,
+                                "name": "BG",
+                                "description": "描述点评交易行为数据",
+                                "creatorId": 44032,
+                                "createTime": "2017-09-01 12:00:00",
+                                "updateTime": "2017-09-01 12:00:03",
+                                "ownerId": 44032,
+                                "isRoot": 0,
+                                "isLeaf": 0,
+                                "tableNum": 31
+                            },
+                            {
+                                "id": 25,
+                                "name": "营业额",
+                                "description": "描述点评交易行为数据",
+                                "creatorId": 44032,
+                                "createTime": "2017-09-01 12:00:00",
+                                "updateTime": "2017-09-01 12:00:03",
+                                "ownerId": 44032,
+                                "isRoot": 0,
+                                "isLeaf": 0,
+                                "tableNum": 31
+                            },
+                            {
+                                "id": 25,
+                                "name": "日活",
+                                "description": "描述点评交易行为数据",
+                                "creatorId": 44032,
+                                "createTime": "2017-09-01 12:00:00",
+                                "updateTime": "2017-09-01 12:00:03",
+                                "ownerId": 44032,
+                                "isRoot": 0,
+                                "isLeaf": 0,
+                                "tableNum": 31
+                            },
+                            {
+                                "id": 25,
+                                "name": "月活",
+                                "description": "描述点评交易行为数据",
+                                "creatorId": 44032,
+                                "createTime": "2017-09-01 12:00:00",
+                                "updateTime": "2017-09-01 12:00:03",
+                                "ownerId": 44032,
+                                "isRoot": 0,
+                                "isLeaf": 0,
+                                "tableNum": 31
+                            },
+                            {
+                                "id": 25,
+                                "name": "访问量",
+                                "description": "描述点评交易行为数据",
+                                "creatorId": 44032,
+                                "createTime": "2017-09-01 12:00:00",
+                                "updateTime": "2017-09-01 12:00:03",
+                                "ownerId": 44032,
+                                "isRoot": 0,
+                                "isLeaf": 0,
                                 "tableNum": 31
                             }
                         ],
@@ -82,6 +143,66 @@
                          "isRoot":0,
                          "isLeaf":1,
                          "tableNum":31,
+                         },
+                         {
+                         "id":25,
+                         "name":"BG",
+                         "description":"描述点评交易行为数据"
+                         "creatorId":44032,
+                         "createTime":"2017-09-01 12:00:00",
+                         "updateTime":"2017-09-01 12:00:03",
+                         "ownerId":44032,
+                         "isRoot":0,
+                         "isLeaf":0,
+                         "tableNum":31,
+                         },
+                         {
+                         "id":25,
+                         "name":"营业额",
+                         "description":"描述点评交易行为数据"
+                         "creatorId":44032,
+                         "createTime":"2017-09-01 12:00:00",
+                         "updateTime":"2017-09-01 12:00:03",
+                         "ownerId":44032,
+                         "isRoot":0,
+                         "isLeaf":0,
+                         "tableNum":31,
+                         },
+                         {
+                         "id":25,
+                         "name":"日活",
+                         "description":"描述点评交易行为数据"
+                         "creatorId":44032,
+                         "createTime":"2017-09-01 12:00:00",
+                         "updateTime":"2017-09-01 12:00:03",
+                         "ownerId":44032,
+                         "isRoot":0,
+                         "isLeaf":0,
+                         "tableNum":31,
+                         },
+                         {
+                         "id":25,
+                         "name":"月活",
+                         "description":"描述点评交易行为数据"
+                         "creatorId":44032,
+                         "createTime":"2017-09-01 12:00:00",
+                         "updateTime":"2017-09-01 12:00:03",
+                         "ownerId":44032,
+                         "isRoot":0,
+                         "isLeaf":0,
+                         "tableNum":31,
+                         },
+                         {
+                         "id":25,
+                         "name":"访问量",
+                         "description":"描述点评交易行为数据"
+                         "creatorId":44032,
+                         "createTime":"2017-09-01 12:00:00",
+                         "updateTime":"2017-09-01 12:00:03",
+                         "ownerId":44032,
+                         "isRoot":0,
+                         "isLeaf":0,
+                         "tableNum":31,
                          }
                     ],
                     "tn": 999, //总条数
@@ -94,9 +215,14 @@
             comment: ""
             deepEqual: false
         }
+        headers: {}
+        statusCode: 200
     }
     request: {
+        headers: {}
+        body: {}
         method: GET
     }
+    cases: []
     version: 0.0.3
 }

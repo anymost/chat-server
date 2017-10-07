@@ -21,8 +21,8 @@
                             {
                                 "tableId": "xxx",
                                 "tableName": "xxx",
-                                "securityLevel": "0:表示低 1:表示中 2:表示高",
-                                "qualityLevel": "0:表示低 1:表示中 2:表示高",
+                                "securityLevel": 1,
+                                "qualityLevel": 0,
                                 "metaTablePk": "hive::dw::dw::dim_deal",
                                 "description": "项目deal表",
                                 "metaUrl": "http://meta.sankuai.com/detail/hive::dw::dw::dim_deal",
@@ -42,8 +42,8 @@
                             {
                                 "tableId": "xxx",
                                 "tableName": "xxx",
-                                "securityLevel": "0:表示低 1:表示中 2:表示高",
-                                "qualityLevel": "0:表示低 1:表示中 2:表示高",
+                                "securityLevel": 2,
+                                "qualityLevel": 1,
                                 "metaTablePk": "hive::dw::dw::dim_deal",
                                 "description": "项目deal表",
                                 "metaUrl": "http://meta.sankuai.com/detail/hive::dw::dw::dim_deal",
@@ -79,8 +79,8 @@
                            {
                                "tableId": "xxx",
                                "tableName": "xxx",
-                               "securityLevel": "0:表示低 1:表示中 2:表示高",
-                               "qualityLevel": "0:表示低 1:表示中 2:表示高",
+                               "securityLevel": 1, //"0:表示低 1:表示中 2:表示高"
+                               "qualityLevel": 0 ,//"0:表示低 1:表示中 2:表示高"
                                "metaTablePk": "hive::dw::dw::dim_deal",
                                "description": "项目deal表",
                                "metaUrl": "http://meta.sankuai.com/detail/hive::dw::dw::dim_deal",
@@ -93,8 +93,8 @@
                            {
                                "tableId":"xxx",
                                "tableName":"xxx",
-                               "securityLevel":"0:表示低 1:表示中 2:表示高",
-                               "qualityLevel":"0:表示低 1:表示中 2:表示高",
+                               "securityLevel":2, //"0:表示低 1:表示中 2:表示高",
+                               "qualityLevel": 1, //"0:表示低 1:表示中 2:表示高",
                                "metaTablePk":"hive::dw::dw::dim_deal",
                                "description":"项目deal表",
                                "metaUrl":"http://meta.sankuai.com/detail/hive::dw::dw::dim_deal",
@@ -114,7 +114,9 @@
             comment: ""
             deepEqual: false
         }
-        headers: {}
+        headers: {
+            content-type: application/json; charset=utf-8
+        }
         statusCode: 200
     }
     request: {
