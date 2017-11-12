@@ -1,5 +1,5 @@
 const router = require('koa-router')();
-const chatList = require('../db/chat/chatList');
+const chatList = require('../../db/chat/chatList');
 
 router.prefix('/api');
 

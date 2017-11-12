@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const {avatarPathHandle} = require('../tools');
 const HOST = require('../config').HOST;
-const randomName = require('../tools').randomName;
+const {randomName, zipFileName} = require('../tools');
 const upload = multer({ dest: path.join(__dirname, '../images/avatar') });
 
 

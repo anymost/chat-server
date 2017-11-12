@@ -12,8 +12,8 @@ const users = require('./routes/users')
 const login = require('./routes/login')
 const upload = require('./routes/upload')
 const registry = require('./routes/registry')
-const chatList = require('./routes/chatList')
-const sendMessage = require('./routes/sendMessage')
+const chatList = require('./routes/chat/chatList')
+const sendMessage = require('./routes/chat/sendMessage')
 
 // error handler
 onerror(app)

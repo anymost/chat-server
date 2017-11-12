@@ -20,6 +20,11 @@ exports.randomName = () => {
     return path.join(__dirname, '../images/avatar/', `${name}.jpg`);
 };
 
+exports.zipFileName = (fileName) => {
+    fileName = fileName.split('.');
+    return `${fileName[0]}-small.jpg`;
+};
+
 exports.idCreator = () => {
     let id = new Date().valueOf();
     return parseInt(id);
