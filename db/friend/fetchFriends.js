@@ -21,21 +21,21 @@ async function fetchFriends(data) {
                 master: id
             }
         });
-        friends = await friends.map(async item => {
-            let friend =  item.dataValues.friend;
-            const value = await User.find({
+        const results = [];
+        for (let item of friends) {
+            const value =  await User.find({
                 attributes:['id', 'name', 'avatar'],
                 where: {
-                    id: friend
+                    id: item.dataValues.friend
                 }
             });
-            return value.dataValues;
-        });
-        console.log(friends);
+            results.push(value.dataValues);
+        }
+
         return Promise.resolve({
             code: 200,
             message: '获取信息完成',
-            data: result
+            data: results
         });
     } catch(error) {
         return Promise.resolve({
@@ -45,7 +45,4 @@ async function fetchFriends(data) {
     }
 }
 
-fetchFriends({
-    id: 1507276718979
-});
 module.exports = fetchFriends;

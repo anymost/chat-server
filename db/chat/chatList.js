@@ -77,7 +77,6 @@ async function chatList (id = 0){
             data: result
         });
     } catch(error) {
-        console.log(error);
         return Promise.resolve({
             code: 401,
             message: '查询错误'
