@@ -79,7 +79,7 @@ const Friend = Pool.define('friend', {
 
 // User.sync({force: false});
 //  Chat.sync({force: false});
-Friend.sync({force: false});
+// Friend.sync({force: false});
 
 exports.User = User;
 exports.Chat = Chat;
