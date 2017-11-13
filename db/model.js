@@ -63,7 +63,6 @@ const Friend = Pool.define('friend', {
     },
     master: {
         type: Sequelize.DOUBLE,
-        primaryKey: true,
         references: {
             model: User,
             key: 'id',
@@ -71,7 +70,6 @@ const Friend = Pool.define('friend', {
     },
     friend: {
         type: Sequelize.DOUBLE,
-        primaryKey: true,
         references: {
             model: User,
             key: 'id',
@@ -81,7 +79,7 @@ const Friend = Pool.define('friend', {
 
 // User.sync({force: false});
 //  Chat.sync({force: false});
-// Friend.sync({force: false});
+Friend.sync({force: false});
 
 exports.User = User;
 exports.Chat = Chat;
