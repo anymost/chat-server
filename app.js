@@ -14,6 +14,7 @@ const upload = require('./routes/upload')
 const registry = require('./routes/registry')
 const chatList = require('./routes/chat/chatList')
 const sendMessage = require('./routes/chat/sendMessage')
+const fetchFriends = require('./routes/friend/fetchFriends')
 
 // error handler
 onerror(app)
@@ -52,6 +53,7 @@ app.use(upload.routes(), upload.allowedMethods())
 app.use(registry.routes(), registry.allowedMethods())
 app.use(chatList.routes(), chatList.allowedMethods())
 app.use(sendMessage.routes(), sendMessage.allowedMethods())
+app.use(fetchFriends.routes(), fetchFriends.allowedMethods())
 
 
 app.on('error', (err, ctx) => {
