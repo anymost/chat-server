@@ -3,7 +3,7 @@ const getChatList = require('../../db/chat/getChatList');
 
 router.prefix('/api');
 
-router.get('/getChatList', async (ctx) => {
+router.post('/getChatList', async (ctx) => {
     const {id} = ctx.request.body;
     if (id) {
         const value = await getChatList(id);
