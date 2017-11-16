@@ -1,11 +1,9 @@
 const Chat = require('../model').Chat;
-const idCreator = require('../../tools').idCreator;
+const ChatList = require('../model').ChatList;
 
 async function appendChat(info) {
     try {
-        const {sender, receiver, message} = info;
-        const id = idCreator();
-        const date = new Date();
+        const {sender, receiver, message, id, date} = info;
         await Chat.create({
             id,
             sender,
@@ -13,6 +11,29 @@ async function appendChat(info) {
             message,
             date
         });
+        const result = await ChatList.find({
+            attributes: ['id'],
+            where: {
+                sender,
+                receiver
+            }
+        });
+        if (result) {
+            await ChatList.destroy({
+                where: {
+                    sender,
+                    receiver
+                }
+            });
+        }
+        await ChatList.create({
+           id,
+           sender,
+           receiver,
+           date,
+           message
+        });
+
         return Promise.resolve({
             code: 200,
             message: '发送成功'
