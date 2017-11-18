@@ -3,7 +3,7 @@ const getChat = require('../../db/chat/getChat');
 
 router.prefix('/api');
 
-router.get('/getChat', async (ctx) => {
+router.post('/getChat', async (ctx) => {
     const {id, sender} = ctx.request.body;
     if (id && sender) {
         const value = await getChat(id, sender);

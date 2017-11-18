@@ -1,5 +1,6 @@
 const Chat = require('../model').Chat;
 const ChatList = require('../model').ChatList;
+const {idCreator} = require('../../tools');
 
 async function appendChat(info) {
     try {
@@ -47,5 +48,14 @@ async function appendChat(info) {
 
 }
 
+appendChat({
+    id: idCreator(),
+    sender: '1507277010058',
+    receiver: '1507276718979',
+    message: '{"type":1,"message":"hello world"}',
+    date: new Date()
+}).then(value => {
+    console.log(value);
+});
 
 module.exports = appendChat;

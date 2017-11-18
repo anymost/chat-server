@@ -1,5 +1,5 @@
 const model = require('../model');
-const {Chat} = model;
+const {Chat, User} = model;
 
 
 async function getChat (id = 0, sender = 0){
@@ -17,13 +17,22 @@ async function getChat (id = 0, sender = 0){
                 message: '结果为空'
             });
         }
+        const senderInfo = await User.find({
+            attributes: ['name', 'avatar'],
+            where: {
+                id: sender
+            }
+        });
+        const {name: senderName, avatar: senderAvatar} = senderInfo.dataValues;
         let message = [];
         for (let item of receiveData) {
             let chat = item.dataValues;
             let info = {
                 date: chat.date,
                 message: chat.message,
-                messageType: 'receive'
+                messageType: 'receive',
+                name: senderName,
+                avatar: senderAvatar
             };
             message.push(info);
         }
