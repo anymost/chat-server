@@ -5,9 +5,9 @@ const {ChatList, User} = model;
 async function getChatList (id = 0){
     try {
         const data = await ChatList.findAll({
-            attributes: ['sender', 'date', 'message'],
+            attributes: ['receiver', 'date', 'message'],
             where: {
-                receiver: id
+                sender: id
             }
         });
         if (data.length < 1) {
@@ -20,12 +20,11 @@ async function getChatList (id = 0){
         for (let item of data) {
             let chat = item.dataValues;
             message.push({
-                sender: chat.sender,
+                sender: chat.receiver,
                 date: chat.date,
                 message: chat.message
             });
         }
-
         for (let i = 0; i < message.length; i++) {
             let item = message[i];
             const value = await User.findOne({
@@ -41,8 +40,8 @@ async function getChatList (id = 0){
             let result = await ChatList.findOne({
                 attributes: ['date', 'message'],
                 where: {
-                    sender: id,
-                    receiver: item.sender
+                    sender: item.sender,
+                    receiver: id
                 }
             });
             if (result) {
