@@ -4,19 +4,8 @@ const {Chat, User} = model;
 
 async function getChat (id = 0, sender = 0){
     try {
-        const receiveData = await Chat.findAll({
-            attributes: ['date', 'message'],
-            where: {
-                receiver: id,
-                sender
-            }
-        });
-        if (receiveData.length < 1) {
-            return Promise.resolve({
-                code: 402,
-                message: '结果为空'
-            });
-        }
+        let message = [];
+
         const senderInfo = await User.find({
             attributes: ['name', 'avatar'],
             where: {
@@ -24,18 +13,30 @@ async function getChat (id = 0, sender = 0){
             }
         });
         const {name: senderName, avatar: senderAvatar} = senderInfo.dataValues;
-        let message = [];
-        for (let item of receiveData) {
-            let chat = item.dataValues;
-            let info = {
-                date: chat.date,
-                message: chat.message,
-                messageType: 'receive',
-                name: senderName,
-                avatar: senderAvatar
-            };
-            message.push(info);
+
+        const receiveData = await Chat.findAll({
+            attributes: ['date', 'message'],
+            where: {
+                receiver: id,
+                sender
+            }
+        });
+
+        if (!!receiveData) {
+            for (let item of receiveData) {
+                let chat = item.dataValues;
+                let info = {
+                    date: chat.date,
+                    message: chat.message,
+                    messageType: 'receive',
+                    name: senderName,
+                    avatar: senderAvatar
+                };
+                message.push(info);
+            }
         }
+
+
 
         const sendData = await Chat.findAll({
             attributes: ['date', 'message'],
@@ -44,7 +45,7 @@ async function getChat (id = 0, sender = 0){
                 sender: id
             }
         });
-        if (sendData &&sendData.length > 1) {
+        if (!!sendData) {
             for (let item of sendData) {
                 let chat = item.dataValues;
                 let info = {
@@ -54,6 +55,13 @@ async function getChat (id = 0, sender = 0){
                 };
                 message.push(info);
             }
+        }
+
+        if (message.length < 1) {
+            return Promise.resolve({
+                code: 402,
+                message: '结果为空'
+            });
         }
 
         return Promise.resolve({
