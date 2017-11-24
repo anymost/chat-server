@@ -4,27 +4,51 @@ const {ChatList, User} = model;
 
 async function getChatList (id = 0){
     try {
-        const data = await ChatList.findAll({
+        const sendData = await ChatList.findAll({
             attributes: ['receiver', 'date', 'message'],
             where: {
                 sender: id
             }
         });
-        if (data.length < 1) {
+        const receiveData = await ChatList.findAll({
+            attributes: ['sender', 'date', 'message'],
+            where: {
+                receiver: id
+            }
+        });
+        const mergeData = sendData.concat(receiveData);
+        if (mergeData.length < 1) {
             return Promise.resolve({
                 code: 402,
                 message: '结果为空'
             });
         }
         let message = [];
-        for (let item of data) {
+        for (let item of mergeData) {
             let chat = item.dataValues;
-            message.push({
-                sender: chat.receiver,
-                date: chat.date,
-                message: chat.message
-            });
+            if (!!chat.receiver) {
+                message.push({
+                    sender: chat.receiver,
+                    date: chat.date,
+                    message: chat.message
+                });
+            } else {
+                let isEqual = false;
+                for(let i = 0; i < message.length; i++) {
+                    if (message[i].sender === chat.sender) {
+                        if (chat.date.valueOf() > message[i].date.valueOf()) {
+                            message[i].date = chat.date;
+                            message[i].message = chat.message;
+                        }
+                        isEqual = true;
+                    }
+                }
+                if (!isEqual) {
+                    message.push(chat);
+                }
+            }
         }
+
         for (let i = 0; i < message.length; i++) {
             let item = message[i];
             const value = await User.findOne({
@@ -37,20 +61,6 @@ async function getChatList (id = 0){
                 name: message[i].name,
                 avatar: message[i].avatar
             } = value.dataValues);
-            let result = await ChatList.findOne({
-                attributes: ['date', 'message'],
-                where: {
-                    sender: item.sender,
-                    receiver: id
-                }
-            });
-            if (result) {
-                result = result.dataValues;
-                if (result.date.valueOf() > item.date.valueOf()) {
-                    message[i].date = result.date;
-                    message[i].message = result.message
-                }
-            }
         }
         return Promise.resolve({
             code: 200,
