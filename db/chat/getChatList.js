@@ -63,7 +63,7 @@ async function getChatList (id = 0){
             } = value.dataValues);
         }
         message.sort((x, y) => {
-            return x.date.valueOf() > y.date.valueOf();
+            return x.date.valueOf() < y.date.valueOf();
         });
         return Promise.resolve({
             code: 200,
