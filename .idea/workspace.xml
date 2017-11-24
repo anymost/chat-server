@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3eb55cd-ee69-46fa-8b44-fce5007b7ef2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/chat/getChat.js" afterPath="$PROJECT_DIR$/db/chat/getChat.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/chat/getChatList.js" afterPath="$PROJECT_DIR$/db/chat/getChatList.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,11 +16,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="getChat.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="getChat.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/chat/getChat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="706">
-              <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+            <state relative-caret-position="288">
+              <caret line="66" column="32" lean-forward="true" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getChatList.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/chat/getChatList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="443">
+              <caret line="62" column="28" lean-forward="false" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -90,8 +100,8 @@
         <option value="$PROJECT_DIR$/routes/chat/sendMessage.js" />
         <option value="$PROJECT_DIR$/db/chat/appendChat.js" />
         <option value="$PROJECT_DIR$/routes/chat/getChat.js" />
-        <option value="$PROJECT_DIR$/db/chat/getChatList.js" />
         <option value="$PROJECT_DIR$/db/chat/getChat.js" />
+        <option value="$PROJECT_DIR$/db/chat/getChatList.js" />
       </list>
     </option>
   </component>
@@ -336,12 +346,12 @@
       <workItem from="1511143422531" duration="30000" />
       <workItem from="1511165396409" duration="2032000" />
       <workItem from="1511504532372" duration="1845000" />
-      <workItem from="1511513393637" duration="2448000" />
+      <workItem from="1511513393637" duration="2748000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99978000" />
+    <option name="totallyTimeSpent" value="100278000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="833" extended-state="0" />
@@ -621,18 +631,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/chat/getChatList.js">
+    <entry file="file://$PROJECT_DIR$/db/chat/getChat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+        <state relative-caret-position="288">
+          <caret line="66" column="32" lean-forward="true" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/chat/getChat.js">
+    <entry file="file://$PROJECT_DIR$/db/chat/getChatList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+        <state relative-caret-position="443">
+          <caret line="62" column="28" lean-forward="false" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
           <folding />
         </state>
       </provider>

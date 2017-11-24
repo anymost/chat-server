@@ -62,6 +62,9 @@ async function getChatList (id = 0){
                 avatar: message[i].avatar
             } = value.dataValues);
         }
+        message.sort((x, y) => {
+            return x.date.valueOf() > y.date.valueOf();
+        });
         return Promise.resolve({
             code: 200,
             message: 'success',
