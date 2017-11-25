@@ -16,6 +16,7 @@ const getChatList = require('./routes/chat/getChatList')
 const getChat = require('./routes/chat/getChat')
 const sendMessage = require('./routes/chat/sendMessage')
 const fetchFriends = require('./routes/friend/fetchFriends')
+const deleteChatList = require('./routes/chat/deleteChatList')
 
 // error handler
 onerror(app)
@@ -56,6 +57,7 @@ app.use(getChat.routes(), getChat.allowedMethods())
 app.use(getChatList.routes(), getChatList.allowedMethods())
 app.use(sendMessage.routes(), sendMessage.allowedMethods())
 app.use(fetchFriends.routes(), fetchFriends.allowedMethods())
+app.use(deleteChatList.routes(), deleteChatList.allowedMethods())
 
 
 app.on('error', (err, ctx) => {
