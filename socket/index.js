@@ -10,14 +10,12 @@ socketIO.getSocketIO = function (server){
 
     var io = socket_io.listen(server);
 
-
     io.sockets.on('connection', function (socket){
-
         socket.on('ws', value => {
-            console.log(value);
+            socket.emit('heartbeat', value);
         })
-    });
 
+    });
 };
 
 module.exports = socketIO;
