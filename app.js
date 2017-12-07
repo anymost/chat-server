@@ -1,13 +1,11 @@
 const Koa = require('koa')
-const route = require('koa-route')
 const views = require('koa-views')
 const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 const kors = require('koa-cors')
-const websocket = require('koa-websocket')
-const app = websocket(new Koa())
+const app = new Koa()
 const index = require('./routes/index')
 const users = require('./routes/users')
 const login = require('./routes/login')
@@ -18,6 +16,8 @@ const getChat = require('./routes/chat/getChat')
 const sendMessage = require('./routes/chat/sendMessage')
 const fetchFriends = require('./routes/friend/fetchFriends')
 const deleteChatList = require('./routes/chat/deleteChatList')
+
+
 
 // error handler
 onerror(app)
@@ -48,15 +48,6 @@ app.use(async (ctx, next) => {
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 })
 
-app.ws.use(async (ctx, next) => {
-    console.log(ctx);
-    ctx.websocket.send('hello');
-    ctx.websocket.on('message', message=>{
-      console.log(message);
-    });
-    // return `next` to pass the context (ctx) on to the next ws middleware
-    return next(ctx);
-});
 
 
 app.use(index.routes(), index.allowedMethods())
