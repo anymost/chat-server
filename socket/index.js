@@ -12,6 +12,7 @@ socketIO.getSocketIO = function (server){
 
     io.sockets.on('connection', function (socket){
         socket.on('ws', value => {
+
             socket.emit('heartbeat', value);
         })
 
